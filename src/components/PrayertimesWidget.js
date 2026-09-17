@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import "../styles/PrayertimesWidget.css";
+import JummahInfo from "./JummahInfo";
 
 export default function PrayertimesWidget() {
   useEffect(() => {
@@ -34,10 +35,6 @@ export default function PrayertimesWidget() {
     };
   }, []);
 
-  const handleFeedbackClick = () => {
-    alert("The Jumu'ah Feedback form is currently unavailable.");
-  };
-
   return (
     <div className="prayertimes-container">
       <a
@@ -49,7 +46,7 @@ export default function PrayertimesWidget() {
       </a>
       
       <div className="jummah-info">
-        <p className="jummah-location">Jummah is held in HW 305.</p>
+        <JummahInfo />
         <p>
           Any updates will be posted{" "}
           <a 

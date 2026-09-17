@@ -11,7 +11,7 @@ import Resources from "./components/Islamic Resources/resources";
 import PrayerAreas from "./components/Islamic Resources/PrayerAreas";
 import AnnouncementsSection from "./components/Program & Events/AnnouncementsSection";
 import EventsSection from "./components/Program & Events/events";
-import FeedSection from "./components/Feed"
+import UpcomingEvents from "./components/UpcomingEvents";
 import WelcomeSection from "./components/WelcomeSection";
 import EventsCalendar from "./components/Program & Events/EventsCalendar";
 import MentalHealth from "./components/Islamic Resources/MentalHealth";
@@ -73,7 +73,7 @@ const Home = () => (
     <PrayertimesWidget />
     {/* <AnnouncementsSection />
     <EventsSection /> */}
-    <FeedSection />
+    <UpcomingEvents />
   </div>
 );
 

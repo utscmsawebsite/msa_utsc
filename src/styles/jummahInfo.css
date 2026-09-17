@@ -1,0 +1,60 @@
+.jummah-schedule {
+  max-width: 760px;
+  margin: 0 auto 20px;
+  color: #f8fafc;
+}
+
+.jummah-schedule h2 {
+  margin: 0 0 16px;
+  color: #ffffff;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+}
+
+.jummah-schedule__sessions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.jummah-schedule__session {
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.jummah-schedule__session h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.jummah-info .jummah-schedule__time {
+  margin: 0 0 5px;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.jummah-info .jummah-schedule__location {
+  margin: 0;
+  color: #dbeafe;
+  font-size: 1rem;
+}
+
+.jummah-info .jummah-schedule__status {
+  max-width: 680px;
+  margin: 0 auto 20px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+}
+
+@media (max-width: 520px) {
+  .jummah-schedule__sessions {
+    grid-template-columns: 1fr;
+  }
+}
+
