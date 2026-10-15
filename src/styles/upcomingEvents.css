@@ -83,14 +83,12 @@
 }
 
 .upcoming-event-card__media img {
+  display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 240ms ease;
-}
-
-.upcoming-event-card:hover .upcoming-event-card__media img {
-  transform: scale(1.025);
+  padding: 8px;
+  box-sizing: border-box;
+  object-fit: contain;
 }
 
 .upcoming-event-card__image-count {
@@ -191,6 +189,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
   width: min(1120px, 100%);
+  height: min(720px, calc(100vh - 48px));
   max-height: calc(100vh - 48px);
   overflow: hidden;
   border-radius: 20px;
@@ -201,7 +200,8 @@
 .event-modal__media {
   position: relative;
   display: flex;
-  min-height: 540px;
+  min-width: 0;
+  min-height: 0;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -209,15 +209,44 @@
 }
 
 .event-modal__media img {
+  display: block;
   width: 100%;
   height: 100%;
+  max-width: 100%;
   max-height: calc(100vh - 48px);
+  padding: clamp(8px, 1.5vw, 18px);
+  box-sizing: border-box;
   object-fit: contain;
 }
 
 .event-modal__content {
+  min-width: 0;
+  min-height: 0;
   overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #8aaed3 #edf3f9;
+  scrollbar-width: thin;
+  scrollbar-gutter: stable;
   padding: 60px 38px 38px;
+}
+
+.event-modal__content::-webkit-scrollbar {
+  width: 9px;
+}
+
+.event-modal__content::-webkit-scrollbar-track {
+  background: #edf3f9;
+}
+
+.event-modal__content::-webkit-scrollbar-thumb {
+  border: 2px solid #edf3f9;
+  border-radius: 999px;
+  background: #8aaed3;
+}
+
+.event-modal__content:focus-visible {
+  outline: 3px solid #5c96d1;
+  outline-offset: -5px;
 }
 
 .event-modal__content h2 {
@@ -305,19 +334,21 @@
 
   .event-modal__dialog {
     grid-template-columns: 1fr;
-    overflow-y: auto;
+    grid-template-rows: minmax(260px, 58%) minmax(0, 42%);
+    height: calc(100vh - 48px);
+    overflow: hidden;
   }
 
   .event-modal__media {
-    min-height: min(58vh, 520px);
+    min-height: 0;
   }
 
   .event-modal__media img {
-    max-height: 58vh;
+    max-height: 100%;
   }
 
   .event-modal__content {
-    overflow: visible;
+    overflow-y: auto;
     padding: 30px 24px 36px;
   }
 }
@@ -336,6 +367,7 @@
   }
 
   .event-modal__dialog {
+    grid-template-rows: minmax(220px, 45vh) minmax(0, 1fr);
     width: 100%;
     height: 100%;
     max-height: none;
@@ -343,11 +375,11 @@
   }
 
   .event-modal__media {
-    min-height: 48vh;
+    min-height: 0;
   }
 
   .event-modal__media img {
-    max-height: 48vh;
+    max-height: 100%;
   }
 }
 

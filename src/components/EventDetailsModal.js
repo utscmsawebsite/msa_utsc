@@ -126,7 +126,12 @@ export default function EventDetailsModal({
           )}
         </div>
 
-        <div className="event-modal__content">
+        <div
+          className="event-modal__content"
+          role="region"
+          aria-label="Event description"
+          tabIndex={0}
+        >
           <p className="event-modal__date">
             {formatDate(event.eventDate)} · {formatTimeRange(event)}
           </p>
